@@ -1,0 +1,563 @@
+<antArtifact identifier="snappyfixgeek-website" title="SnappyFixGeek - AI Consulting & Computer Repair" type="text/html">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SnappyFixGeek - AI Consulting & Computer Repair</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #10b981;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --accent: #8b5cf6;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--dark);
+            color: white;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span.highlight {
+            color: var(--secondary);
+        }
+        
+        .logo span.highlight-2 {
+            color: var(--primary);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: var(--secondary);
+        }
+        
+        .btn-secondary:hover {
+            background: #059669;
+        }
+        
+        .hero {
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(37,99,235,0.1) 0%, rgba(16,185,129,0.1) 100%);
+        }
+        
+        .hero-content {
+            width: 50%;
+        }
+        
+        .hero-image {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .section {
+            padding: 5rem 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .testimonials {
+            background-color: #f1f5f9;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .client-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .client-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 1rem;
+            background-color: #ddd;
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        
+        input, textarea, select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 0;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-links h3 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #334155;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background-color: var(--primary);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid #334155;
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                height: auto;
+                padding: 4rem 0;
+            }
+            
+            .hero-content, .hero-image {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .hero-image {
+                margin-top: 2rem;
+            }
+            
+            nav {
+                flex-direction: column;
+            }
+            
+            .nav-links {
+                margin-top: 1rem;
+            }
+            
+            .nav-links li {
+                margin-left: 1rem;
+                margin-right: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <span>Snappy</span><span class="highlight">Fix</span><span class="highlight-2">Geek</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container" style="display: flex; align-items: center;">
+            <div class="hero-content">
+                <h1>Tech Solutions <span style="color: var(--primary);">Simplified</span></h1>
+                <p>From complex AI implementations to simple computer repairs, SnappyFixGeek brings expert technical solutions to businesses and individuals with speed and precision.</p>
+                <a href="#contact" class="btn">Get Started</a>
+                <a href="#services" class="btn btn-secondary" style="margin-left: 1rem;">Learn More</a>
+            </div>
+            <div class="hero-image">
+                <img src="/api/placeholder/500/400" alt="AI and Computer Repair" style="max-width: 100%;">
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Services</h2>
+                <p>Comprehensive technical solutions for all your needs</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🤖</div>
+                    <h3>AI Consulting</h3>
+                    <p>Expert guidance on implementing AI solutions for your business. We help you navigate the complex world of artificial intelligence and machine learning.</p>
+                    <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+                        <li>AI Strategy Development</li>
+                        <li>Machine Learning Implementation</li>
+                        <li>Data Analysis & Processing</li>
+                        <li>AI Integration with Existing Systems</li>
+                    </ul>
+                    <a href="#contact" class="btn" style="width: 100%; text-align: center;">Get Started</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💻</div>
+                    <h3>Computer Repair</h3>
+                    <p>Fast and efficient computer repair services for businesses and individuals. We diagnose and fix hardware and software issues quickly.</p>
+                    <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+                        <li>Hardware Troubleshooting & Repair</li>
+                        <li>Software Installation & Configuration</li>
+                        <li>Virus & Malware Removal</li>
+                        <li>Data Recovery & Backup Solutions</li>
+                    </ul>
+                    <a href="#contact" class="btn" style="width: 100%; text-align: center;">Book Repair</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔒</div>
+                    <h3>Cybersecurity</h3>
+                    <p>Protect your digital assets with our comprehensive cybersecurity services. We help you identify vulnerabilities and implement robust security measures.</p>
+                    <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+                        <li>Security Audits & Assessments</li>
+                        <li>Network Security Implementation</li>
+                        <li>Employee Security Training</li>
+                        <li>Incident Response Planning</li>
+                    </ul>
+                    <a href="#contact" class="btn" style="width: 100%; text-align: center;">Secure Your Business</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section" style="background-color: #f1f5f9;">
+        <div class="container">
+            <div class="section-header">
+                <h2>About SnappyFixGeek</h2>
+                <p>Your trusted partner in technology solutions</p>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 2rem;">
+                <div style="flex: 1; min-width: 300px;">
+                    <img src="/api/placeholder/500/400" alt="SnappyFixGeek Team" style="max-width: 100%; border-radius: 10px;">
+                </div>
+                <div style="flex: 1; min-width: 300px;">
+                    <h3 style="margin-bottom: 1rem; font-size: 1.8rem;">Our Story</h3>
+                    <p>Founded in 2020, SnappyFixGeek was born from a passion for making technology accessible and useful for everyone. What started as a small computer repair shop has evolved into a comprehensive technology solutions provider.</p>
+                    <p>Our team consists of certified technicians, AI specialists, and cybersecurity experts who are dedicated to delivering exceptional service and innovative solutions to our clients.</p>
+                    <h3 style="margin: 1.5rem 0 1rem; font-size: 1.8rem;">Our Mission</h3>
+                    <p>We aim to bridge the gap between complex technology and everyday users, providing snappy solutions that empower businesses and individuals to leverage the full potential of their tech investments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="section testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Clients Say</h2>
+                <p>Don't just take our word for it</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="client-info">
+                        <div class="client-img"></div>
+                        <div>
+                            <h4>Sarah Johnson</h4>
+                            <p>Small Business Owner</p>
+                        </div>
+                    </div>
+                    <p>"SnappyFixGeek transformed our business with their AI consulting services. They helped us implement automated customer service solutions that increased our efficiency by 40%. Their team was professional, knowledgeable, and incredibly supportive throughout the process."</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="client-info">
+                        <div class="client-img"></div>
+                        <div>
+                            <h4>Michael Chen</h4>
+                            <p>Freelance Designer</p>
+                        </div>
+                    </div>
+                    <p>"When my workstation crashed right before a major deadline, I thought I was doomed. SnappyFixGeek lived up to their name - they fixed my computer within hours and even recovered files I thought were lost forever. Cannot recommend them enough!"</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="client-info">
+                        <div class="client-img"></div>
+                        <div>
+                            <h4>Akira Tanaka</h4>
+                            <p>Tech Startup CEO</p>
+                        </div>
+                    </div>
+                    <p>"The cybersecurity assessment from SnappyFixGeek revealed vulnerabilities we had no idea existed. Their thorough approach and clear recommendations helped us strengthen our security posture significantly. They're now our go-to tech partners."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get In Touch</h2>
+                <p>Ready to get started? Contact us today!</p>
+            </div>
+            <div class="contact-form">
+                <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                    <p style="display: none;">
+                        <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                    </p>
+                    <input type="hidden" name="form-name" value="contact" />
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Service Interested In</label>
+                        <select id="service" name="service" required>
+                            <option value="">Select a Service</option>
+                            <option value="ai">AI Consulting</option>
+                            <option value="repair">Computer Repair</option>
+                            <option value="security">Cybersecurity</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="How can we help you?" required></textarea>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-links">
+                    <h3>SnappyFixGeek</h3>
+                    <p>Your trusted partner for AI consulting and computer repair services. We're committed to delivering fast, reliable, and innovative tech solutions.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon">f</a>
+                        <a href="#" class="social-icon">t</a>
+                        <a href="#" class="social-icon">in</a>
+                        <a href="#" class="social-icon">ig</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#services">AI Consulting</a></li>
+                        <li><a href="#services">Computer Repair</a></li>
+                        <li><a href="#services">Cybersecurity</a></li>
+                        <li><a href="#services">IT Support</a></li>
+                        <li><a href="#services">Data Recovery</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li>123 Tech Street, Digital City</li>
+                        <li>contact@snappyfixgeek.com</li>
+                        <li>(555) 123-4567</li>
+                        <li>Mon-Fri: 9AM - 6PM</li>
+                        <li>Sat: 10AM - 4PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 SnappyFixGeek. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+</antArtifact>
